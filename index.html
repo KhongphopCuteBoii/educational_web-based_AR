@@ -1,0 +1,34 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <script type="importmap">
+    {
+      "imports": {
+	    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+	    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+        "gltfloader": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+	    "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+      }
+    }
+    </script>
+    <script src="lib/main.js" type="module"></script>
+    <style>
+      body {
+    	margin: 0;
+        width: 100vw;
+	    height: 100vh;
+	    position: relative;
+	    overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="control">
+      <button id="startButton">Start</button>
+      <button id="stopButton">Stop</button>
+    </div>
+    <div id="container">
+    </div>
+  </body>
+</html>
