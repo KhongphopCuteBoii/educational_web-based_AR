@@ -1,6 +1,15 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- ADD THIS: The Mobile Console Library -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+      // Initialize the console immediately
+      var vConsole = new VConsole();
+    </script>
+    <!-- END OF ADDITION -->
+
     <script type="importmap">
     {
       "imports": {
@@ -11,24 +20,11 @@
       }
     }
     </script>
-    <!-- NOTE: Make sure your file is actually inside a folder named 'lib', otherwise remove 'lib/' -->
     <script src="lib/main.js" type="module"></script>
     <style>
-      body {
-        margin: 0;
-      }
-      #container {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-      }
-      #control {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 10;
-      }
+      body { margin: 0; }
+      #container { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+      #control { position: absolute; top: 10px; left: 10px; z-index: 10; }
     </style>
   </head>
   <body>
