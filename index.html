@@ -1,30 +1,81 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- ADD THIS: The Mobile Console Library -->
+
+    <!-- Mobile Console (vConsole) -->
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script>
       // Initialize the console immediately
       var vConsole = new VConsole();
     </script>
-    <!-- END OF ADDITION -->
 
+    <!-- Import Map -->
     <script type="importmap">
     {
       "imports": {
         "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
         "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
         "gltfloader": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
-        "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+        "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
       }
     }
     </script>
+
+    <!-- Main Logic -->
     <script src="lib/main.js" type="module"></script>
+
     <style>
-      body { margin: 0; }
-      #container { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
-      #control { position: absolute; top: 10px; left: 10px; z-index: 10; }
+      body {
+        margin: 0;
+      }
+
+      #container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #control {
+        position: absolute;
+        top: 20px;                   /* Moved down slightly */
+        left: 50%;                   /* Center horizontally */
+        transform: translateX(-50%); /* Center alignment fix */
+        z-index: 10;
+        display: flex;               /* Puts buttons side by side */
+        gap: 15px;                   /* Space between buttons */
+      }
+
+      /* BUTTON STYLING */
+      button {
+        font-size: 1.5rem;           /* Big text */
+        padding: 12px 24px;          /* Big clickable area */
+        border: none;
+        border-radius: 10px;         /* Rounded corners */
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Drop shadow */
+      }
+
+      #startButton {
+        background-color: #4CAF50;   /* Green */
+        color: white;
+      }
+
+      #stopButton {
+        background-color: #f44336;   /* Red */
+        color: white;
+      }
+
+      button:active {
+        transform: translateY(2px);  /* Click effect */
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      button:disabled {
+        background-color: #cccccc;
+        color: #666666;
+      }
     </style>
   </head>
   <body>
